@@ -9,3 +9,14 @@ in the internet that the early variants, which does not have the MAC-address on 
 But I saw in wireshark, that the water heater already sends some data over udp to paradigma.remoteportal.de in the "0-frame" and I already was able to decode some
 values.
 Any help and suggestions about how the values can be sent to HomeAssistant are appreciated.
+
+# build from source
+
+## Dependencies
+
+### Debian
+following packages are needed
+`gcc cmake build-essentials libmosquitto`
+
+## 
+
