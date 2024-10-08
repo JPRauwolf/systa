@@ -1,17 +1,13 @@
-
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <mosquitto.h>
 #include <string.h>
 #include "mqtt.hpp"
 
 static struct mosquitto *mosq;
 
-char * host;
-
-int mqtt_create()
+int mqtt_create(char *host, char *uname, char *passwd)
 {
-   host = getenv("MQTT_HOST");
 
    mosquitto_lib_init();
 
@@ -22,13 +18,14 @@ int mqtt_create()
       exit(EXIT_FAILURE);
    }
 
+   mosquitto_username_pw_set(mosq, uname, passwd);
+
    int ret = mosquitto_connect(mosq, host, 1883, 10);
    if (ret != MOSQ_ERR_SUCCESS)
    {
       fprintf(stderr, "Error connecting to broker\n");
       exit(EXIT_FAILURE);
    }
-
 
    return 0;
 }
@@ -40,7 +37,7 @@ int mqtt_loop()
    return 0;
 }
 
-int mqtt_publish(const char * topic, const char * message)
+int mqtt_publish(const char *topic, const char *message)
 {
    int ret = mosquitto_publish(mosq, NULL, topic, strlen(message), message, 0, false);
    if (ret != MOSQ_ERR_SUCCESS)
@@ -50,7 +47,6 @@ int mqtt_publish(const char * topic, const char * message)
 
    return 0;
 }
-
 
 int mqtt_close()
 {
