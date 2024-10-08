@@ -18,5 +18,6 @@ Any help and suggestions about how the values can be sent to HomeAssistant are a
 following packages are needed
 `gcc cmake build-essentials libmosquitto-dev`
 
-## 
+## buildscript
+run `build.sh` from the root of the repository
 
