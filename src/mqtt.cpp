@@ -25,7 +25,7 @@ int mqtt_create()
    int ret = mosquitto_connect(mosq, host, 1883, 10);
    if (ret != MOSQ_ERR_SUCCESS)
    {
-      fprintf(stderr, "Error connectint to broker\n");
+      fprintf(stderr, "Error connecting to broker\n");
       exit(EXIT_FAILURE);
    }
 
