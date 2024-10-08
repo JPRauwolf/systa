@@ -16,7 +16,7 @@ Any help and suggestions about how the values can be sent to HomeAssistant are a
 
 ### Debian
 following packages are needed
-`gcc cmake build-essentials libmosquitto`
+`gcc cmake build-essentials libmosquitto-dev`
 
 ## 
 
