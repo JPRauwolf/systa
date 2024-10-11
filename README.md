@@ -21,3 +21,7 @@ following packages are needed
 ## buildscript
 run `build.sh` from the root of the repository
 
+# Runn
+After running the buildscript the executable is located in `build/src/systa`
+
+runn it with the parameters like so `./systa <mqtt_host> <mqtt_user> <mqtt_passwd>`
